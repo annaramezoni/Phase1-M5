@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Vintage Sofa",
+    "description": "Comfortable 3-seater sofa in good condition",
+    "start_price": 300,
+    "reserve_price": 600
+  },
+  {
+    "title": "Oak Dining Table",
+    "description": "Solid oak table that seats six",
+    "start_price": 200,
+    "reserve_price": 450
+  },
+  {
+    "title": "Antique Lamp",
+    "description": "Brass table lamp, working order",
+    "start_price": 50,
+    "reserve_price": 120
+  }
+]
