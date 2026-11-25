@@ -1,14 +1,11 @@
 import mongoose from "mongoose";
 import { readFileSync } from "node:fs";
+import AuctionItem from "../models/auctionItems.js";
+import connectToDB from "../config/dbConnect.js";
 
-//Connect to db
-mongoose.connect("mongodb://localhost:27017/mydatabase");
-
-//Import models
-import AuctionItem from "./models/auction-items.js";
+connectToDB();
 
 //Seed Auction Items
-
 const defaultData = JSON.parse(
   readFileSync(new URL("./data.json", import.meta.url), "utf-8"),
 );

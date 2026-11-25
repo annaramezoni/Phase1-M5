@@ -10,7 +10,7 @@ import {
   updateAuctionItem,
   removeAuctionItem,
   listAuctionItems,
-} from "./index.js";
+} from "../routes/index.js";
 
 const questions = [
   {
