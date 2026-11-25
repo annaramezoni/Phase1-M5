@@ -16,5 +16,17 @@
     "description": "Brass table lamp, working order",
     "start_price": 50,
     "reserve_price": 120
+  },
+  {
+    "title": "sofa",
+    "description": "comfortable 3 seats sofa",
+    "start_price": 300,
+    "reserve_price": 600
+  },
+  {
+    "title": "Smart TV",
+    "description": "Samsung TV 55in",
+    "start_price": 500,
+    "reserve_price": 750
   }
 ]

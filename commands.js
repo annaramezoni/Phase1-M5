@@ -40,10 +40,10 @@ const questions = [
 program.version("1.0.0").description("Auction Management System");
 
 program
-  .command("seed")
+  .command("seed [file]")
   .alias("s")
-  .description("Seed the database")
-  .action(() => seedAuctionItems());
+  .description("Seed the database (optionally from a JSON file)")
+  .action((file) => seedAuctionItems(file));
 
 program
   .command("clear")

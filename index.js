@@ -1,14 +1,27 @@
 import mongoose from "mongoose";
-import data from "./data.json" with { type: "json" };
+import { readFileSync } from "node:fs";
 
 //Connect to db
-const db = mongoose.connect("mongodb://localhost:27017/mydatabase");
+mongoose.connect("mongodb://localhost:27017/mydatabase");
 
 //Import models
 import AuctionItem from "./models/auction-items.js";
 
 //Seed Auction Items
-const seedAuctionItems = () => {
+
+const defaultData = JSON.parse(
+  readFileSync(new URL("./data.json", import.meta.url), "utf-8"),
+);
+
+const seedAuctionItems = (file) => {
+  let data;
+  try {
+    data = file ? JSON.parse(readFileSync(file, "utf-8")) : defaultData;
+  } catch (err) {
+    onsole.error(`Could not read seed file: ${err.message}`);
+    mongoose.connection.close();
+    return;
+  }
   AuctionItem.insertMany(data)
     .then(() => console.info(`Seeded ${data.length} items`))
     .catch((err) => console.error(err.message))
