@@ -1,9 +1,11 @@
 {
-  "name": "mission-5.1",
+  "name": "auction-items-cli",
   "version": "1.0.0",
   "type": "module",
   "description": "\"Auction items CLI\"",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": "./commands.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
