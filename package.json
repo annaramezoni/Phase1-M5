@@ -1,5 +1,5 @@
 {
-  "name": "auction-items-cli",
+  "name": "auction-cli",
   "version": "1.0.0",
   "type": "module",
   "description": "\"Auction items CLI\"",
