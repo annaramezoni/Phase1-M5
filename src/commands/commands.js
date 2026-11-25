@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import { Command } from "commander";
 import inquirer from "inquirer";
-const program = new Command();
 import {
   seedAuctionItems,
   clearAuctionItems,
@@ -12,6 +11,7 @@ import {
   listAuctionItems,
 } from "../routes/index.js";
 
+const program = new Command();
 const questions = [
   {
     type: "input",
