@@ -9,7 +9,7 @@ import {
   updateAuctionItem,
   removeAuctionItem,
   listAuctionItems,
-} from "../routes/index.js";
+} from "../controller/cliController.js";
 
 const program = new Command();
 const questions = [

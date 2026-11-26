@@ -7,7 +7,7 @@ connectToDB();
 
 //Seed Auction Items
 const defaultData = JSON.parse(
-  readFileSync(new URL("./data.json", import.meta.url), "utf-8"),
+  readFileSync(new URL("../../data.json", import.meta.url), "utf-8"),
 );
 
 const seedAuctionItems = (file) => {
@@ -15,7 +15,7 @@ const seedAuctionItems = (file) => {
   try {
     data = file ? JSON.parse(readFileSync(file, "utf-8")) : defaultData;
   } catch (err) {
-    onsole.error(`Could not read seed file: ${err.message}`);
+    console.error(`Could not read seed file: ${err.message}`);
     mongoose.connection.close();
     return;
   }
@@ -41,9 +41,9 @@ const addAuctionItem = (item) => {
     .finally(() => mongoose.connection.close());
 };
 //Find auction items
-const findAuctionItems = (title) => {
+const findAuctionItems = (keyword) => {
   //Make case insensitive
-  const search = new RegExp(title, "i");
+  const search = new RegExp(keyword, "i");
   AuctionItem.find({ $or: [{ title: search }, { description: search }] })
     .then((items) => {
       console.info(items);

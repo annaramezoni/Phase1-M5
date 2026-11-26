@@ -6,7 +6,7 @@ export const getItems = async (req, res) => {
     const filter = {};
 
     if (search) {
-      const escaped = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const escaped = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); //It protects the search from interpreting user input as regular expression instructions. It also helps prevent users from accidentally or intentionally creating expensive regular expression patterns.
       const regex = new RegExp(escaped, "i");
       filter.$or = [{ title: regex }, { description: regex }];
     }
